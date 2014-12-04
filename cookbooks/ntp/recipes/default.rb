@@ -14,8 +14,7 @@ end
 
 template "/etc/ntp.conf" do
 	action :create
-	source "motd.erb"
-	content "Property of SAKS"
+	source "ntp.erb"
 	mode "0644"
 	owner "root"
 	group "root"

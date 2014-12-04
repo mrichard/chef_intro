@@ -193,13 +193,13 @@
     "filesystem": {
       "/dev/xvde": {
         "kb_size": "8256952",
-        "kb_used": "2563392",
-        "kb_available": "5274132",
+        "kb_used": "2565576",
+        "kb_available": "5271948",
         "percent_used": "33%",
         "mount": "/",
         "total_inodes": "524288",
-        "inodes_used": "84489",
-        "inodes_available": "439799",
+        "inodes_used": "84605",
+        "inodes_available": "439683",
         "inodes_percent_used": "17%",
         "fs_type": "ext4",
         "mount_options": [
@@ -359,10 +359,10 @@
       "total": 1,
       "real": 0
     },
-    "uptime_seconds": 47589,
-    "uptime": "13 hours 13 minutes 09 seconds",
-    "idletime_seconds": 94180,
-    "idletime": "1 day 02 hours 09 minutes 40 seconds",
+    "uptime_seconds": 50639,
+    "uptime": "14 hours 03 minutes 59 seconds",
+    "idletime_seconds": 100142,
+    "idletime": "1 day 03 hours 49 minutes 02 seconds",
     "memory": {
       "swap": {
         "cached": "0kB",
@@ -370,23 +370,23 @@
         "free": "0kB"
       },
       "total": "1695028kB",
-      "free": "1074344kB",
-      "buffers": "146472kB",
-      "cached": "261460kB",
-      "active": "301836kB",
-      "inactive": "205496kB",
-      "dirty": "160kB",
+      "free": "1065540kB",
+      "buffers": "147536kB",
+      "cached": "265600kB",
+      "active": "310420kB",
+      "inactive": "202144kB",
+      "dirty": "20kB",
       "writeback": "0kB",
-      "anon_pages": "99408kB",
-      "mapped": "15860kB",
-      "slab": "82332kB",
-      "slab_reclaimable": "34548kB",
-      "slab_unreclaim": "47784kB",
-      "page_tables": "2504kB",
+      "anon_pages": "99432kB",
+      "mapped": "15848kB",
+      "slab": "85888kB",
+      "slab_reclaimable": "38064kB",
+      "slab_unreclaim": "47824kB",
+      "page_tables": "2508kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "847512kB",
-      "committed_as": "242584kB",
+      "committed_as": "242596kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "17324kB",
       "vmalloc_chunk": "34359711492kB"
@@ -575,15 +575,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "213759",
+              "packets": "309",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "213759",
+              "packets": "309",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -593,16 +593,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "2885803",
-              "packets": "20904",
+              "bytes": "3255389",
+              "packets": "23476",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "33974074",
-              "packets": "36736",
+              "bytes": "34979539",
+              "packets": "40916",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -754,7 +754,7 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1417714955.880825,
+    "ohai_time": 1417718006.0391517,
     "cloud_v2": null,
     "root_group": "root",
     "etc": {
@@ -898,6 +898,13 @@
           "uid": 2000,
           "shell": "/bin/bash",
           "gecos": "Chef <training@getchef.com>"
+        },
+        "ntp": {
+          "dir": "/etc/ntp",
+          "gid": 38,
+          "uid": 38,
+          "shell": "/sbin/nologin",
+          "gecos": ""
         }
       },
       "group": {
@@ -1127,6 +1134,12 @@
           "members": [
 
           ]
+        },
+        "ntp": {
+          "gid": 38,
+          "members": [
+
+          ]
         }
       }
     },
@@ -1146,14 +1159,14 @@
     "fqdn": "ip-172-31-38-245.ec2.internal",
     "domain": "ec2.internal",
     "recipes": [
-      "motd",
-      "motd::default"
+      "ntp",
+      "ntp::default"
     ],
     "roles": [
 
     ]
   },
   "run_list": [
-    "recipe[motd]"
+    "recipe[ntp]"
   ]
 }
