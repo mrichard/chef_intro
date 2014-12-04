@@ -13,6 +13,7 @@ package "ntpdate" do
 end
 
 template "/etc/ntp.conf" do
+	notifies :restart, "service[ntpd]"
 	action :create
 	source "ntp.erb"
 	mode "0644"
