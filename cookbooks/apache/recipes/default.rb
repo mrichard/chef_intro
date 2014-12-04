@@ -8,6 +8,13 @@ package "httpd" do
 	action :install
 end
 
+file "/var/www/html/index.html" do
+	action :create
+	content "hello"
+end
+
 service "httpd" do
 	action [:start, :enable]
-end 
+end
+
+ 
