@@ -10,7 +10,10 @@ describe 'apache' do
 	it "is installed" do
 	  expect( package "httpd").to be_installed
 	end
-	it "is running"
+
+	describe host('http://127.0.0.1') do
+	  it { should be_resolvable }
+	end
 
 	it "is responding to http request"
 
