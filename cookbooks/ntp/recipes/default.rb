@@ -19,3 +19,7 @@ template "/etc/ntp.conf" do
 	owner "root"
 	group "root"
 end
+
+service "ntpd" do
+	action [:start, :enable]
+end 
